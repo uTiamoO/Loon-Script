@@ -17,7 +17,7 @@ ip-mode = v4-only
 # TUN IPv6配置
 ipv6-vif = off
 # DNS server
-dns-server = system,223.5.5.5,223.6.6.6,119.29.29.29,114.114.114.114
+dns-server = system,119.29.29.29,114.114.114.114,223.5.5.5
 # DoH server
 doh-server = https://dns.alidns.com/dns-query,https://sm2.doh.pub/dns-query
 # DoH3 server
@@ -25,9 +25,9 @@ doh3-server = h3://dns.alidns.com/dns-query
 # DoQ server
 doq-server = quic://dns.alidns.com:853
 # Wi-Fi共享开启时http服务的端口
-wifi-access-http-port = 6154
+wifi-access-http-port = 7222
 # Wi-Fi共享开启时socks5服务的端口
-wifi-access-socks5-port = 6153
+wifi-access-socks5-port = 7221
 # 是否允许Wi-Fi下共享网络
 allow-wifi-access = false
 # 是否开启对局域网中其他设备的请求进行MITM
@@ -76,9 +76,9 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 香港 = url-test,HK,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/HongKong.png
 台湾 = url-test,TW,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Taiwan.png
 日本 = url-test,JP,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Japan.png
-韩国 = select,KR,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/SouthKorea.png
-新加坡 = select,SG,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Singapore.png
-美国 = select,US,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedStates.png
+韩国 = select,KR,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/SouthKorea.png
+新加坡 = select,SG,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Singapore.png
+美国 = select,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedStates.png
 其他 = select,RA,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedNations.png
 Apple = select,DIRECT,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Apple-02.png
 AI = select,JP,SG,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Anthropic.png
@@ -113,12 +113,11 @@ DOMAIN-SUFFIX,czyl.cf,手动选择
 DOMAIN-SUFFIX,vossc.com,手动选择
 DOMAIN-SUFFIX,001122.top,AI
 DOMAIN-SUFFIX,trxs666.com,AI
-DOMAIN-SUFFIX,gs-loc.apple.com,DIRECT
 DOMAIN-SUFFIX,124727.xyz,DIRECT
 DOMAIN-SUFFIX,ctyunxs.cn,REJECT
 DOMAIN,hcyykj-eos-hhht5-01.eos.huhehaote-8.cmecloud.cn,REJECT
 DOMAIN-SUFFIX,linux.do,手动选择
-FINAL,故障转移
+FINAL,手动选择
 
 [Remote Rule]
 https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy=TikTok, tag=TikTok, enabled=true
@@ -135,19 +134,28 @@ https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=CN REGIO
 [Script]
 
 [Plugin]
+https://reven.jsforbaby.workers.dev/reven/iTunes.lpx, enabled=true
+https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=手动选择, enabled=true
+https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/QDReader/profiles/qdreader.loon.plugin, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js/_end_/bdyy.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=波点音乐 VIP, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js/_end_/ximalaya.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=喜马拉雅会员, enabled=true
+https://yfamilys.com/plugin/SpotifyPremium.plugin, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
-https://kelee.one/Tool/Loon/Lpx/QuickSearch.lpx, enabled=true
 https://raw.githubusercontent.com/ios151/wloc/refs/heads/main/modules/wloc.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=手动选择, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
+http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_ad_remove.snippet/_end_/TilingSales_ad_remove.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, enabled=true
+https://loonhub.wuyra.com/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/refs/heads/main/lingoDuo/lingoDuo-enchanced.plugin, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=手动选择, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=手动选择, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=手动选择, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
 
 
 [Mitm]
 hostname =
 ca-p12 =
-ca-passphrase = 
+ca-passphrase =
 skip-server-cert-verify = true
