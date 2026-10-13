@@ -1,0 +1,149 @@
+# Loon\u5168\u5C40\u914D\u7F6E by Tartarus
+# \u4F5C\u8005GitHub\uFF1A https://github.com/Tartarus2014
+# \u811A\u672C\u5E93GitHub\uFF1A https://github.com/Tartarus2014/Loon-Script
+# Loon\u5B98\u65B9\u6587\u6863\uFF1Ahttps://nsloon.app/docs/intro
+# Loon\u7B2C\u4E09\u65B9\u63D2\u4EF6\u4E2D\u5FC3\uFF1Ahttps://hub.kelee.one
+# Loon\u7B2C\u4E09\u65B9\u77E5\u8BC6\u5E93\uFF1Ahttps://t.me/ibilibili/581
+
+# \u5BFC\u5165\u914D\u7F6E\u3002
+# \u5BFC\u5165\u5B8C\u6210\u540E\u70B9 https://www.nsloon.com/openloon/flowmodel=filter \u5207\u6362\u81F3\u81EA\u52A8\u5206\u6D41\u6A21\u5F0F\u3002
+# \u518D\u70B9 https://www.nsloon.com/openloon/proxymode=tun \u5207\u6362\u4EE3\u7406\u6A21\u5F0F\u81F3 TUN Only \u6A21\u5F0F [\u6B64\u64CD\u4F5C\u70B9\u51FB\u8DF3\u8F6C\u81F3Loon\u540E\u5373\u4E3A\u5207\u6362\u6210\u529F]\u3002
+# \u6253\u5F00\uFF3BMitM\uFF3D\uFF3B\u811A\u672C\uFF3D\uFF3B\u590D\u5199\uFF3D\u4E09\u4E2A\u529F\u80FD\u7684\u5F00\u5173\u3002
+# \u6253\u5F00\uFF3BMitM\uFF3D\u91CC\u7684\uFF3BMitM over HTTP/2\uFF3D\u548C\uFF3BQUIC\u56DE\u9000\u4FDD\u62A4\uFF3D\u5F00\u5173\u3002
+# \u4FDD\u8BC1Safari\u662F\u9ED8\u8BA4\u6D4F\u89C8\u5668\u7684\u60C5\u51B5\u4E0B\uFF0C\u5B89\u88C5\u5E76\u4FE1\u4EFB\u8BC1\u4E66\u3002
+# \u70B9\u51FBLoon\u5E95\u90E8\u5BFC\u822A\u680F\u7684\uFF3B\u914D\u7F6E\uFF3D\u2192 \u53F3\u4E0A\u89D2\u7684\uFF3B\u22EF\uFF3D\uFF0C\u6253\u5F00\uFF3B\u59CB\u7EC8\u5F00\u542F\uFF3D\u7684\u5F00\u5173\u3002
+# \u6DFB\u52A0\u4F60\u7684\u673A\u573A\u8BA2\u9605\u3002
+# \u6253\u5F00Loon\u7684\u5F00\u5173\u540E\u5E76\u70B9\u51FB https://www.nsloon.com/openloon/update?sub=all \u4E00\u952E\u66F4\u65B0\u6240\u6709\u5916\u90E8\u8D44\u6E90\u3002
+
+[General]
+# IPv6 \u652F\u6301
+ip-mode = dual
+ipv6-vif = auto
+# UDP\u76F8\u5173
+disable-stun = true
+udp-fallback-mode = REJECT
+# SNI\u8F85\u52A9\u89C4\u5219\u5339\u914D
+sni-sniffing = true
+# \u7B56\u7565\u7EC4\u5207\u6362\u65F6\u5173\u95ED\u8FDE\u63A5
+disconnect-on-policy-change = true
+# \u57DF\u540D\u62E6\u622A\u884C\u4E3A
+domain-reject-mode = DNS
+dns-reject-mode = LoopbackIP
+# > \u8DF3\u8FC7\u4EE3\u7406
+# \u8DF3\u8FC7\u67D0\u4E2A\u57DF\u540D\u6216\u8005 IP \u6BB5\uFF0C\u8FD9\u4E9B\u76EE\u6807\u4E3B\u673A\u5C06\u4E0D\u4F1A\u7531 Loon Proxy \u5904\u7406\u3002
+skip-proxy = 127.0.0.1,192.168.0.0/16,10.0.0.0/8,172.16.0.0/12,localhost,*.local,e.crashlynatics.com,passenger.t3go.cn,passenger.t3go.cn
+# > Always Real IP Hosts
+# DNS \u6570\u636E\u5305\u5C06\u88AB\u8F6C\u53D1\u5230\u4E0A\u6E38 DNS \u670D\u52A1\u5668\u3002
+real-ip = *.apple.com,*apple.com
+# \u7ED5\u8FC7\u8DEF\u7531
+bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,192.0.0.0/24,192.0.2.0/24,192.88.99.0/24,192.168.0.0/16,198.51.100.0/24,203.0.113.0/24,224.0.0.0/4,255.255.255.255/32
+# DNS \u670D\u52A1\u5668
+dns-server = system,223.5.5.5,180.184.1.1,119.29.29.29,114.114.114.114
+# doh-server = https://223.5.5.5/dns-query,https://8.8.8.8/dns-query
+# Hijack DNS
+# \u9ED8\u8BA4\u60C5\u51B5\u4E0B\uFF0CLoon \u53EA\u8FD4\u56DE\u53D1\u9001\u5230 Loon DNS \u5730\u5740\u7684 DNS \u67E5\u8BE2\u7684\u5047 IP \u5730\u5740(198.18.0.2)\u3002
+# \u6709\u4E9B\u8BBE\u5907\u6216\u8F6F\u4EF6\u603B\u662F\u4F7F\u7528\u786C\u7F16\u7801\u7684 DNS \u670D\u52A1\u5668\u3002 (\u4F8B\u5982 Google Speakers \u603B\u662F\u4F7F\u7528 8.8.8.8)\u3002 \u60A8\u53EF\u4EE5\u4F7F\u7528\u6B64\u9009\u9879\u52AB\u6301\u67E5\u8BE2\uFF0C\u4EE5\u83B7\u5F97\u4E00\u4E2A\u5047\u5730\u5740\u3002
+hijack-dns = 8.8.8.8:53,8.8.4.4:53
+# Wi-Fi \u8BBF\u95EE
+allow-wifi-access = false
+wifi-access-http-port = 7222
+wifi-access-socks5-port = 7221
+mitm-on-wifi-access = false
+# \u4EE3\u7406\u6D4B\u901F URL
+internet-test-url = http://connectivitycheck.platform.hicloud.com/generate_204
+proxy-test-url = http://detectportal.firefox.com/success.txt
+# \u6D4B\u901F\u8D85\u65F6 (s)
+test-timeout = 2
+# \u7F51\u7EDC\u63A5\u53E3
+interface-mode = auto
+# ssid-trigger\u53C2\u6570\uFF0C\u7528\u4E8E\u6307\u5B9ASSID\u4E0B\u6D41\u91CF\u6A21\u5F0F\u5207\u6362\uFF0C\uFF08default\u8868\u793A\u9ED8\u8BA4\uFF0Ccellular\u8868\u793A\u8702\u7A9D\uFF0C\u76EE\u524D\u652F\u6301\u4E09\u79CD\u503C\uFF1Arule\uFF0Cdirect\uFF0Cproxy\uFF09 
+# ssid-trigger = "default":rule, "cellular":rule,"ASUS_5G":direct
+# \u89E3\u6790\u5668
+resource-parser = https://raw.githubusercontent.com/sub-store-org/Sub-Store/release/sub-store-parser.loon.min.js
+
+[Proxy]
+
+[Remote Proxy]
+
+[Proxy Group]
+\u515C\u5E95\u9009\u62E9 = select, DIRECT, \u8282\u70B9\u9009\u62E9, \u9999\u6E2F\u8282\u70B9, \u72EE\u57CE\u8282\u70B9, \u7F8E\u56FD\u8282\u70B9, \u53F0\u6E7E\u8282\u70B9, \u97E9\u56FD\u8282\u70B9, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+\u8282\u70B9\u9009\u62E9 = select, \u9999\u6E2F\u8282\u70B9, \u72EE\u57CE\u8282\u70B9, \u7F8E\u56FD\u8282\u70B9, \u53F0\u6E7E\u8282\u70B9, \u97E9\u56FD\u8282\u70B9, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+\u4EBA\u5DE5\u667A\u80FD = select, \u7F8E\u56FD\u8282\u70B9, \u82F1\u56FD\u8282\u70B9, \u72EE\u57CE\u8282\u70B9, \u65E5\u672C\u8282\u70B9, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png
+\u82F9\u679C\u670D\u52A1 = select, DIRECT, \u8282\u70B9\u9009\u62E9, \u9999\u6E2F\u8282\u70B9, \u72EE\u57CE\u8282\u70B9, \u7F8E\u56FD\u8282\u70B9, \u53F0\u6E7E\u8282\u70B9, \u97E9\u56FD\u8282\u70B9, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+\u6CB9\u7BA1\u89C6\u9891 = select, \u8282\u70B9\u9009\u62E9, \u9999\u6E2F\u8282\u70B9, \u72EE\u57CE\u8282\u70B9, \u7F8E\u56FD\u8282\u70B9, \u53F0\u6E7E\u8282\u70B9, \u97E9\u56FD\u8282\u70B9, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+\u7535\u62A5\u6D88\u606F = select, \u8282\u70B9\u9009\u62E9, \u9999\u6E2F\u8282\u70B9, \u72EE\u57CE\u8282\u70B9, \u7F8E\u56FD\u8282\u70B9, \u53F0\u6E7E\u8282\u70B9, \u97E9\u56FD\u8282\u70B9, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+\u9999\u6E2F\u8282\u70B9 = url-test, \u9999\u6E2F, url = http://www.qualcomm.cn/generate_204, interval = 60, tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+\u53F0\u6E7E\u8282\u70B9 = url-test, \u53F0\u6E7E, url = http://www.qualcomm.cn/generate_204, interval = 60, tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+\u72EE\u57CE\u8282\u70B9 = url-test, \u65B0\u52A0\u5761, url = http://www.qualcomm.cn/generate_204, interval = 60, tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+\u97E9\u56FD\u8282\u70B9 = url-test, \u97E9\u56FD, url = http://www.qualcomm.cn/generate_204, interval = 60, tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+\u65E5\u672C\u8282\u70B9 = url-test, \u65E5\u672C, url = http://www.qualcomm.cn/generate_204, interval = 60, tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+\u7F8E\u56FD\u8282\u70B9 = select, \u7F8E\u56FD, url = http://www.qualcomm.cn/generate_204, interval = 60, tolerance = 50, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+
+[Remote Filter]
+\u9999\u6E2F = NameRegex, FilterKey = "^(?=.*((?i)\uD83C\uDDED\uD83C\uDDF0|\u9999\u6E2F|(\b(HK|HKG|Hong)(\d+)?\b)))(?!.*((?i)\u56DE\u56FD|\u6821\u56ED|\u6E38\u620F|\uD83C\uDFAE|(\b(GAME)\b))).*$"
+\u53F0\u6E7E = NameRegex, FilterKey = "^(?=.*((?i)\uD83C\uDDF9\uD83C\uDDFC|\u53F0\u6E7E|(\b(TW|TWN|Tai|Taiwan)(\d+)?\b)))(?!.*((?i)\u56DE\u56FD|\u6821\u56ED|\u6E38\u620F|\uD83C\uDFAE|(\b(GAME)\b))).*$"
+\u65E5\u672C = NameRegex, FilterKey = "^(?=.*((?i)\uD83C\uDDEF\uD83C\uDDF5|\u65E5\u672C|\u5DDD\u65E5|\u4E1C\u4EAC|\u5927\u962A|\u6CC9\u65E5|\u57FC\u7389|(\b(JP|JPN|Japan)(\d+)?\b)))(?!.*((?i)\u56DE\u56FD|\u6821\u56ED|\u6E38\u620F|\uD83C\uDFAE|(\b(GAME)\b))).*$"
+\u97E9\u56FD = NameRegex, FilterKey = "^(?=.*((?i)\uD83C\uDDF0\uD83C\uDDF7|\u97E9\u56FD|\u97D3|\u9996\u5C14|(\b(KR|KOR|Korea)(\d+)?\b)))(?!.*((?i)\u56DE\u56FD|\u6821\u56ED|\u6E38\u620F|\uD83C\uDFAE|(\b(GAME)\b))).*$"
+\u7F8E\u56FD = NameRegex, FilterKey = "^(?=.*((?i)\uD83C\uDDFA\uD83C\uDDF8|\u7F8E\u56FD|\u6CE2\u7279\u5170|\u8FBE\u62C9\u65AF|\u4FC4\u52D2\u5188|\u51E4\u51F0\u57CE|\u8D39\u5229\u8499|\u7845\u8C37|\u62C9\u65AF\u7EF4\u52A0\u65AF|\u6D1B\u6749\u77F6|\u5723\u4F55\u585E|\u5723\u514B\u62C9\u62C9|\u897F\u96C5\u56FE|\u829D\u52A0\u54E5|(\b(US|USA|United States)(\d+)?\b)))(?!.*((?i)\u56DE\u56FD|\u6821\u56ED|\u6E38\u620F|\uD83C\uDFAE|(\b(GAME)\b))).*$"
+\u65B0\u52A0\u5761 = NameRegex, FilterKey = "^(?=.*((?i)\uD83C\uDDF8\uD83C\uDDEC|\u65B0\u52A0\u5761|\u72EE|(\b(SG|SGP|Singapore)(\d+)?\b)))(?!.*((?i)\u56DE\u56FD|\u6821\u56ED|\u6E38\u620F|\uD83C\uDFAE|(\b(GAME)\b))).*$"
+
+[Rule]
+FINAL,\u515C\u5E95\u9009\u62E9
+
+[Remote Rule]
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=\u5C40\u57DF\u7F51, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Reject/Advertising.lsr, policy=REJECT, tag=\u53BB\u5E7F\u544A,enabled=false
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Apple/TestFlight.lsr, policy=\u8282\u70B9\u9009\u62E9, tag=TestFlight, enabled=true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=\u8282\u70B9\u9009\u62E9, tag=AI, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Apple/Apple.lsr, policy=\u82F9\u679C\u670D\u52A1, tag=\u82F9\u679C\u670D\u52A1, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/Github.lsr, policy=\u8282\u70B9\u9009\u62E9, tag=Github, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Media/YouTube.lsr, policy=\u6CB9\u7BA1\u89C6\u9891, tag=\u6CB9\u7BA1\u89C6\u9891, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Media/Netflix.lsr, policy=\u5948\u98DE\u89C6\u9891, tag=\u5948\u98DE\u89C6\u9891, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Media/CN.lsr, policy=\u6E2F\u53F0\u756A\u5267, tag=\u56FD\u5185\u5A92\u4F53, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/Telegram.lsr, policy=\u7535\u62A5\u6D88\u606F, tag=\u7535\u62A5\u6D88\u606F, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list, policy=\u8282\u70B9\u9009\u62E9, tag=\u5168\u7403\u89C4\u5219, enabled=true
+https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list, policy=\u8282\u70B9\u9009\u62E9, tag=\u5168\u7403\u89C4\u5219, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Direct.lsr, policy=DIRECT, tag=\u5168\u7403\u76F4\u8FDE, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/GEOIP.lsr, policy=DIRECT, tag=GEOIP_CN, enabled=true
+
+[Host]
+
+[Rewrite]
+
+[Script]
+
+[Plugin]
+https://raw.githubusercontent.com/ios151/wloc/refs/heads/main/modules/wloc.lpx, enabled=true
+https://yfamilys.com/plugin/SpotifyPremium.plugin, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/LoonGallery.lpx, enabled = true
+https://raw.githubusercontent.com/sub-store-org/Sub-Store/refs/heads/master/config/Loon-parser.plugin, enabled=true
+https://github.com/Biliverse/Enhanced/releases/latest/download/Biliverse.Enhanced.plugin, enabled=true
+https://raw.githubusercontent.com/chxm1023/Script_X/refs/heads/main/Collections.plugin, enabled=false
+https://reven.jsforbaby.workers.dev/reven/iTunes.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/MojiWeather_remove_ads.lpx, enabled=true
+https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/refs/heads/main/lingoDuo/lingoDuo-enchanced.plugin, enabled=false
+
+http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_ad_remove.snippet/_end_/TilingSales_ad_remove.sgmodule?type=qx-rewrite&n=%E7%93%9C%E5%AD%90%E5%BD%B1%E8%A7%86%E5%8E%BB%E5%B9%BF%E5%91%8A%40ZenmoFeiShi+%E5%85%A8%E9%9D%A2%E5%87%80%E5%8C%96&headers=User-Agent:surge&del=true&jqEnabled=true&target=loon-plugin&category=ZenmoFeiShi, enabled=true
+https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/QDReader/profiles/qdreader.loon.plugin, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Plugin/Unlock/bdyy.lpx, enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Plugin/Unlock/ximalaya.lpx, enabled=true
+#http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js/_end_/bdyy.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=\u6CE2\u70B9\u97F3\u4E50VIP, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Remove_ads_by_keli.lpx, pin=true, enabled=true
+https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Bilibili_remove_ads.lpx, enabled=false
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=\u8282\u70B9\u9009\u62E9, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=\u8282\u70B9\u9009\u62E9, enabled=true
+https://loonhub.wuyra.com/Lpx/YouTube_remove_ads.lpx, enabled=true
+https://raw.githubusercontent.com/mekos2772/ios-location-spoofer/refs/heads/main/ios-location-spoofer.lnplugin, enabled=false
+https://mock.parsingbook.workers.dev/parsingbook/parsingbook.lpx, enabled=false
+http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/ximalayajisuban.js/_end_/ximalayajisuban.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=\u559C\u9A6C\u62C9\u96C5\u6781\u901F, enabled=false
+
+[Mitm]
+hostname =
+ca-p12 = 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
+ca-passphrase = 5F4TJ0C7
+skip-server-cert-verify = true
