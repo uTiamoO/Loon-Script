@@ -70,7 +70,7 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Proxy Group]
 SelfSelect = select,DIRECT,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,Other,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/Select.png
 Apple = select,DIRECT,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Apple-02.png
-AI = select,JP,SG,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Anthropic.png
+AI = select,Japan,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Anthropic.png
 TikTok = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/TikTok-02.png
 CryptoCurrency = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,Other,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Bitcoin-02.png
 Telegram = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Telegram-01.png
@@ -80,6 +80,8 @@ Microsoft = select,DIRECT,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedState
 Instagram = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Instagram-02.png
 X = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Twitter-02.png
 YouTube = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png
+
+Global = select,ALL,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/WorldMap.png
 HongKong = url-test,HK,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/HongKong.png
 Taiwan = url-test,TW,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Taiwan.png
 Japan = url-test,JP,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Japan.png
@@ -87,7 +89,7 @@ SouthKorea = select,KR,img-url = https://raw.githubusercontent.com/sooyaaabo/Ico
 Singapore = select,SG,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Singapore.png
 UnitedStates = select,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedStates.png
 Other = select,RA,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedNations.png
-Global = select,ALL,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/WorldMap.png
+
 Fallback = fallback,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,interval = 60,max-timeout = 2000,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/Fallback.png
 
 [Remote Filter]
@@ -109,7 +111,7 @@ DOMAIN-SUFFIX,124727.xyz,DIRECT
 DOMAIN-SUFFIX,ctyunxs.cn,REJECT
 DOMAIN,hcyykj-eos-hhht5-01.eos.huhehaote-8.cmecloud.cn,REJECT
 DOMAIN-SUFFIX,linux.do,SelfSelect
-FINAL,SelfSelect
+FINAL,Fallback
 
 [Remote Rule]
 https://loon.103516.xyz/Rule/BlockAds.lsr, policy=REJECT, tag=BlockAds, enabled=true
