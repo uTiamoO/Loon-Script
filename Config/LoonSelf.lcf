@@ -87,7 +87,7 @@ CryptoCurrency = select,香港,台湾,日本,韩国,新加坡,美国,其他,img-
 Telegram = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Telegram-01.png
 GitHub = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/GitHub-02.png
 Google = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Google.png
-Microsoft = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Microsoft.png
+Microsoft = select,DIRECT,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Microsoft.png
 Instagram = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Instagram-02.png
 X = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Twitter-02.png
 YouTube = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png
