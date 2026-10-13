@@ -68,37 +68,29 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Remote Proxy]
 
 [Proxy Group]
-手动选择 = select,DIRECT,香港,台湾,日本,韩国,新加坡,美国,其他,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/Select.png
-时延优选 = url-test,香港,台湾,日本,韩国,新加坡,美国,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/UrlTest.png
-故障转移 = fallback,DIRECT,香港,台湾,日本,韩国,新加坡,美国,interval = 60,max-timeout = 2000,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/Fallback.png
-负载均衡 = load-balance,香港,台湾,日本,韩国,新加坡,美国,interval = 60,max-timeout = 2000,algorithm = pcc,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/LoadBalance.png
-全球手动策略 = select,ALL,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/WorldMap.png
-香港 = url-test,HK,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/HongKong.png
-台湾 = url-test,TW,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Taiwan.png
-日本 = url-test,JP,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Japan.png
-韩国 = select,KR,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/SouthKorea.png
-新加坡 = select,SG,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Singapore.png
-美国 = select,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedStates.png
-其他 = select,RA,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedNations.png
-Apple = select,DIRECT,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Apple-02.png
+SelfSelect = select,DIRECT,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,Other,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/Select.png
+Apple = select,DIRECT,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Apple-02.png
 AI = select,JP,SG,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Anthropic.png
-TikTok = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/TikTok-02.png
-CryptoCurrency = select,香港,台湾,日本,韩国,新加坡,美国,其他,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Bitcoin-02.png
-Telegram = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Telegram-01.png
-GitHub = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/GitHub-02.png
-Google = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Google.png
-Microsoft = select,DIRECT,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Microsoft.png
-Instagram = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Instagram-02.png
-X = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Twitter-02.png
-YouTube = select,香港,台湾,日本,韩国,新加坡,美国,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png
+TikTok = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/TikTok-02.png
+CryptoCurrency = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,Other,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Bitcoin-02.png
+Telegram = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Telegram-01.png
+GitHub = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/GitHub-02.png
+Google = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Google.png
+Microsoft = select,DIRECT,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Microsoft.png
+Instagram = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Instagram-02.png
+X = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/Twitter-02.png
+YouTube = select,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/App/YouTube.png
+HongKong = url-test,HK,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/HongKong.png
+Taiwan = url-test,TW,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Taiwan.png
+Japan = url-test,JP,interval = 60,tolerance = 50,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Japan.png
+SouthKorea = select,KR,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/SouthKorea.png
+Singapore = select,SG,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/Singapore.png
+UnitedStates = select,US,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedStates.png
+Other = select,RA,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/UnitedNations.png
+Global = select,ALL,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Flag/WorldMap.png
+Fallback = fallback,HongKong,Taiwan,Japan,SouthKorea,Singapore,UnitedStates,interval = 60,max-timeout = 2000,img-url = https://raw.githubusercontent.com/sooyaaabo/IconLibrary/main/Other/Fallback.png
 
 [Remote Filter]
-香港 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|HKG|Hong)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
-台湾 = NameRegex, FilterKey = "^(?=.*((?i)🇹🇼|台湾|(\b(TW|TWN|Tai|Taiwan)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
-日本 = NameRegex, FilterKey = "^(?=.*((?i)🇯🇵|日本|川日|东京|大阪|泉日|埼玉|(\b(JP|JPN|Japan)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
-韩国 = NameRegex, FilterKey = "^(?=.*((?i)🇰🇷|韩国|韓|首尔|(\b(KR|KOR|Korea)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
-美国 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|(\b(US|USA|United States)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
-新加坡 = NameRegex, FilterKey = "^(?=.*((?i)🇸🇬|新加坡|狮|(\b(SG|SGP|Singapore)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 ALL = NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|好友|失联|总计|重置|重新|设置|(\b(USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
 HK = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|HKG|Hong)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
 TW = NameRegex, FilterKey = "^(?=.*((?i)🇹🇼|台湾|(\b(TW|TWN|Tai|Taiwan)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
@@ -109,23 +101,36 @@ US = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|美国|波特兰|达拉斯|俄�
 RA = NameRegex, FilterKey = "^(?=.*(.))(?!.*((?i)🇭🇰|🇲🇴|🇹🇼|🇯🇵|🇰🇷|🇸🇬|🇺🇸|香港|澳门|台湾|日本|川日|东京|大阪|泉日|埼玉|韩国|韓|首尔|新加坡|狮|美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|超时|收藏|福利|好友|失联|总计|重置|重新|设置|回国|校园|游戏|🎮|(\b(HK|HKG|Hong|MO|MAC|Oman|Macau|Macao|TW|TWN|Tai|Taiwan|JP|JPN|Japan|KR|KOR|Korea|SG|SGP|Singapore|US|USA|United States|America|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author|Traffic)(\d+)?\b|(\d{4}-\d{2}-\d{2}|\dG)))).*$"
 
 [Rule]
-DOMAIN-SUFFIX,czyl.cf,手动选择
-DOMAIN-SUFFIX,vossc.com,手动选择
+DOMAIN-SUFFIX,czyl.cf,SelfSelect
+DOMAIN-SUFFIX,vossc.com,SelfSelect
 DOMAIN-SUFFIX,001122.top,AI
 DOMAIN-SUFFIX,trxs666.com,AI
 DOMAIN-SUFFIX,124727.xyz,DIRECT
 DOMAIN-SUFFIX,ctyunxs.cn,REJECT
 DOMAIN,hcyykj-eos-hhht5-01.eos.huhehaote-8.cmecloud.cn,REJECT
-DOMAIN-SUFFIX,linux.do,手动选择
-FINAL,手动选择
+DOMAIN-SUFFIX,linux.do,SelfSelect
+FINAL,SelfSelect
 
 [Remote Rule]
+https://loon.103516.xyz/Rule/BlockAds.lsr, policy=REJECT, tag=BlockAds, enabled=true
 https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy=TikTok, tag=TikTok, enabled=true
 https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=AI, tag=AI, enabled=true
-https://kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr, policy=手动选择, tag=Speedtest Intl, enabled=true
 https://rule.kelee.one/Loon/Netflix.lsr, policy=YouTube, tag=Netflix, enabled=true
+https://rule.kelee.one/Loon/WeChat.lsr, policy=DIRECT, tag=WeChat, enabled=true
+https://loon.103516.xyz/Rule/Apple.lsr, policy=Apple, tag=Apple, enabled=true
+https://loon.103516.xyz/Rule/CryptoCurrency.lsr, policy=CryptoCurrency, tag=U币, enabled=true
+https://rule.kelee.one/Loon/Telegram.lsr, policy=Telegram, tag=Telegram, enabled=true
+https://rule.kelee.one/Loon/GitHub.lsr, policy=GitHub, tag=GitHub, enabled=true
+https://rule.kelee.one/Loon/Google.lsr, policy=Google, tag=Google, enabled=true
+https://rule.kelee.one/Loon/Microsoft.lsr, policy=Microsoft, tag=Microsoft, enabled=true
+https://rule.kelee.one/Loon/Instagram.lsr, policy=Instagram, tag=Instagram, enabled=true
+https://rule.kelee.one/Loon/Twitter.lsr, policy=X, tag=X, enabled=true
+https://rule.kelee.one/Loon/YouTube.lsr, policy=YouTube, tag=YouTube, enabled=true
+https://rule.kelee.one/Loon/Global.lsr, policy=Global, tag=Global, enabled=true
+https://rule.kelee.one/Loon/ChinaMax.lsr, policy=DIRECT, tag=ChinaMax, enabled=true
 https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=DIRECT, tag=LAN, enabled=true
 https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=CN REGION, enabled=true
+https://kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr, policy=SelfSelect, tag=测速, enabled=false
 
 [Host]
 
@@ -136,7 +141,7 @@ https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=CN REGIO
 [Plugin]
 https://reven.jsforbaby.workers.dev/reven/iTunes.lpx, enabled=true
 https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=手动选择, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=SelfSelect, enabled=true
 https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/QDReader/profiles/qdreader.loon.plugin, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js/_end_/bdyy.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=波点音乐 VIP, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js/_end_/ximalaya.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=喜马拉雅会员, enabled=true
@@ -148,10 +153,10 @@ https://raw.githubusercontent.com/ios151/wloc/refs/heads/main/modules/wloc.lpx, 
 http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_ad_remove.snippet/_end_/TilingSales_ad_remove.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, enabled=true
 https://loonhub.wuyra.com/Lpx/YouTube_remove_ads.lpx, enabled=true
 https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/refs/heads/main/lingoDuo/lingoDuo-enchanced.plugin, enabled=true
-https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=手动选择, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=手动选择, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=手动选择, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=SelfSelect, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=SelfSelect, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=SelfSelect, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, policy=SelfSelect, enabled=true
 
 
 [Mitm]
