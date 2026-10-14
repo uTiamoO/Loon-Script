@@ -138,16 +138,22 @@ https://kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr, policy=SelfSelect, t
 [Script]
 
 [Plugin]
-https://reven.jsforbaby.workers.dev/reven/iTunes.lpx, enabled=true
-https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.lpx, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=SelfSelect, enabled=true
-https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/QDReader/profiles/qdreader.loon.plugin, enabled=true
-http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/bdyy.js/_end_/bdyy.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=波点音乐 VIP, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js/_end_/ximalaya.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=喜马拉雅会员, enabled=true
+https://loon.103516.xyz/Plugin/WeChat.lpx, enabled=true
+https://loon.103516.xyz/Plugin/WeiBo.lpx, enabled=true
+https://loon.103516.xyz/Plugin/CMS_Adblock.lpx, enabled=true
+https://loon.103516.xyz/Plugin/CookieTask.lpx, enabled=true
+https://loon.103516.xyz/Plugin/BaiduNetDisk.lpx, enabled=true
+https://loon.103516.xyz/Plugin/BodianMusic.lpx, enabled=true
+https://reven.jsforbaby.workers.dev/reven/iTunes.lpx, enabled=false
+https://github.com/NSRingo/WeatherKit/releases/latest/download/iRingo.WeatherKit.lpx, enabled=true
+https://raw.githubusercontent.com/Yuheng0101/X/main/Tasks/QDReader/profiles/qdreader.loon.plugin, enabled=true
 https://yfamilys.com/plugin/SpotifyPremium.plugin, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Amap_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=SelfSelect, pin=true, enabled=true
+https://loon.103516.xyz/Plugin/BlockAds.lpx, pin=true, enabled=true
 https://raw.githubusercontent.com/ios151/wloc/refs/heads/main/modules/wloc.lpx, enabled=true
 http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_ad_remove.snippet/_end_/TilingSales_ad_remove.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, enabled=true
 https://loonhub.wuyra.com/Lpx/YouTube_remove_ads.lpx, enabled=true
@@ -156,7 +162,6 @@ https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=SelfSelect, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=SelfSelect, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=SelfSelect, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, policy=SelfSelect, enabled=true
-
 
 [Mitm]
 hostname =
