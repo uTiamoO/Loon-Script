@@ -1,6 +1,6 @@
 # Loon 自用精简配置
 # 更新时间：2026-11-08
-# 代理链：在 Landing 中选择高质量落地节点；Proxy 选择 Chain 后即生效
+# 代理链：在「落地」选择高质量出口节点；「代理」切到「链式出口」后生效
 # 初始化：导入配置 → 自动分流 → TUN Only → 开启 MitM/脚本/复写 → 安装信任证书 → 添加订阅 → 更新外部资源 → 重启开关
 
 [General]
@@ -32,42 +32,48 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Remote Proxy]
 
 [Remote Filter]
-ALL = NameRegex, FilterKey = "^(?!.*((?i)官网|网址|订阅|流量|到期|机场|过期|已用|剩余|邮箱|工单|频道|邀请|返利|失联|重置|套餐|客服|群|USE|USED|TOTAL|EXPIRE|EMAIL|Traffic)).*$"
-ASIA_NODES = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|🇹🇼|🇯🇵|🇰🇷|🇸🇬|香港|台湾|日本|韩国|新加坡|狮城|HK|TW|JP|KR|SG|Hong|Tai|Japan|Korea|Singapore))(?!.*((?i)回国|校园|游戏|GAME)).*$"
+全部节点 = NameRegex, FilterKey = "^(?!.*((?i)官网|网址|订阅|流量|到期|机场|过期|已用|剩余|邮箱|工单|频道|邀请|返利|失联|重置|套餐|客服|群|USE|USED|TOTAL|EXPIRE|EMAIL|Traffic)).*$"
+亚洲节点 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|🇹🇼|🇯🇵|🇰🇷|🇸🇬|香港|台湾|日本|韩国|新加坡|狮城|HK|TW|JP|KR|SG|Hong|Tai|Japan|Korea|Singapore))(?!.*((?i)回国|校园|游戏|GAME)).*$"
+欧美节点 = NameRegex, FilterKey = "^(?=.*((?i)🇺🇸|🇬🇧|🇩🇪|🇫🇷|美国|英国|德国|法国|US|USA|UK|GB|United States|Britain|Germany|France))(?!.*((?i)回国|校园|游戏|GAME)).*$"
 
 [Proxy Chain]
-Chain = Entry,Landing,udp=true
+链式出口 = 入口,落地,udp=true
 
 [Proxy Group]
-Proxy = select,Entry,Chain,DIRECT
-Entry = select,Auto,Asia,ALL,DIRECT
-Landing = select,ALL
-AI = select,ALL,Chain,Proxy
-Apple = select,DIRECT,Proxy
-Auto = fallback,Asia,ALL,interval = 300,max-timeout = 2000
-Asia = url-test,ASIA_NODES,interval = 300,tolerance = 100
+全局出口 = select,入口节点,链式出口,DIRECT
+入口节点 = select,自动优选,亚洲入口,欧美入口,全部入口,DIRECT
+落地节点 = select,全部落地,亚洲落地,欧美落地
+人工智能 = select,链式出口,欧美入口,入口节点,全局出口
+苹果服务 = select,DIRECT,全局出口
+自动优选 = fallback,亚洲入口,欧美入口,全部入口,DIRECT,interval = 300,max-timeout = 2000
+亚洲入口 = url-test,亚洲节点,interval = 300,tolerance = 100
+欧美入口 = url-test,欧美节点,interval = 300,tolerance = 100
+全部入口 = url-test,全部节点,interval = 300,tolerance = 100
+亚洲落地 = url-test,亚洲节点,interval = 300,tolerance = 100
+欧美落地 = url-test,欧美节点,interval = 300,tolerance = 100
+全部落地 = url-test,全部节点,interval = 300,tolerance = 100
 
 [Rule]
-DOMAIN-SUFFIX,czyl.cf,Proxy
-DOMAIN-SUFFIX,vossc.com,Proxy
-DOMAIN-SUFFIX,001122.top,AI
-DOMAIN-SUFFIX,trxs666.com,AI
-DOMAIN-SUFFIX,124727.xyz,DIRECT
-DOMAIN-SUFFIX,ctyunxs.cn,REJECT
-DOMAIN,hcyykj-eos-hhht5-01.eos.huhehaote-8.cmecloud.cn,REJECT
-DOMAIN-SUFFIX,linux.do,Proxy
-FINAL,Auto
+FINAL,DIRECT
 
 [Remote Rule]
-https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy=Proxy, tag=TikTok, enabled=true
-https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=AI, tag=AI, enabled=true
-https://rule.kelee.one/Loon/WeChat.lsr, policy=DIRECT, tag=WeChat, enabled=true
-https://loon.103516.xyz/Rule/Apple.lsr, policy=Apple, tag=Apple, enabled=true
-https://rule.kelee.one/Loon/Microsoft.lsr, policy=DIRECT, tag=Microsoft, enabled=true
-https://rule.kelee.one/Loon/Global.lsr, policy=Proxy, tag=Global, enabled=true
-https://rule.kelee.one/Loon/ChinaMax.lsr, policy=DIRECT, tag=ChinaMax, enabled=true
-https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=DIRECT, tag=LAN, enabled=true
-https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=CN REGION, enabled=true
+https://kelee.one/Tool/Loon/Lsr/TikTok.lsr, policy=全局出口, tag=抖音海外, enabled=true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=人工智能, tag=人工智能, enabled=true
+https://github.com/Repcz/Tool/raw/X/Loon/Rules/Google.list, policy=全局出口, tag=谷歌, enabled=true
+https://github.com/Repcz/Tool/raw/X/Loon/Rules/Telegram.list, policy=全局出口, tag=电报, enabled=true
+https://github.com/Repcz/Tool/raw/X/Loon/Rules/YouTube.list, policy=全局出口, tag=视频平台, enabled=true
+https://github.com/Repcz/Tool/raw/X/Loon/Rules/Netflix.list, policy=全局出口, tag=奈飞, enabled=true
+https://github.com/Repcz/Tool/raw/X/Loon/Rules/GitHub.list, policy=全局出口, tag=程序开发, enabled=true
+https://rule.kelee.one/Loon/WeChat.lsr, policy=DIRECT, tag=微信, enabled=true
+https://loon.103516.xyz/Rule/Apple.lsr, policy=苹果服务, tag=苹果, enabled=true
+https://rule.kelee.one/Loon/Microsoft.lsr, policy=DIRECT, tag=微软, enabled=true
+https://rule.kelee.one/Loon/Global.lsr, policy=全局出口, tag=国际网站, enabled=true
+https://rule.kelee.one/Loon/ChinaMax.lsr, policy=DIRECT, tag=国内网站, enabled=true
+https://kelee.one/Tool/Loon/Lsr/LAN_SPLITTER.lsr, policy=DIRECT, tag=局域网, enabled=true
+https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=国内地区, enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Rule/self.lsr, policy=人工智能, tag=自用AI分流, enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Rule/self-direct.lsr, policy=DIRECT, tag=自用直连分流, enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Rule/self-reject.lsr, policy=REJECT, tag=自用拒绝分流, enabled=true
 
 [Host]
 
@@ -76,15 +82,10 @@ https://kelee.one/Tool/Loon/Lsr/REGION_SPLITTER.lsr, policy=DIRECT, tag=CN REGIO
 [Script]
 
 [Plugin]
-# 常用工具
-https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=Proxy, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=Proxy, enabled=true
-https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=Proxy, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, policy=Proxy, enabled=true
 # 网络与广告
 https://kelee.one/Tool/Loon/Lpx/Block_HTTPDNS.lpx, pin=true, enabled=true
 https://kelee.one/Tool/Loon/Lpx/BlockAdvertisers.lpx, pin=true, enabled=true
-https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=Proxy, pin=true, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Prevent_DNS_Leaks.lpx, policy=全局出口, pin=true, enabled=true
 https://loon.103516.xyz/Plugin/CMS_Adblock.lpx, enabled=true
 # 自用功能
 http://script.hub/file/_start_/https://raw.githubusercontent.com/WeiGiegie/666/main/ximalaya.js/_end_/ximalaya.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, tag=喜马拉雅会员, enabled=true
@@ -101,7 +102,11 @@ https://raw.githubusercontent.com/ios151/wloc/refs/heads/main/modules/wloc.lpx, 
 http://script.hub/file/_start_/https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/TilingSales_ad_remove.snippet/_end_/TilingSales_ad_remove.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true, enabled=true
 https://loonhub.wuyra.com/Lpx/YouTube_remove_ads.lpx, enabled=true
 https://raw.githubusercontent.com/TAKAGIVEGETA/MyScripts/refs/heads/main/lingoDuo/lingoDuo-enchanced.plugin, enabled=true
-
+# 常用工具
+https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=全局出口, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Script-Hub.lpx, policy=全局出口, enabled=true
+https://kelee.one/Tool/Loon/Lpx/BoxJs.lpx, policy=全局出口, enabled=true
+https://kelee.one/Tool/Loon/Lpx/Node_detection_tool.lpx, policy=全局出口, enabled=true
 [Mitm]
 hostname =
 ca-p12 =
