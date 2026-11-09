@@ -80,6 +80,7 @@ FINAL = select, DIRECT, 节点选择, 香港节点, 狮城节点, 美国节点, 
 日本节点 = select, 日本, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
 美国节点 = select, 美国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
 落地节点 = select, 落地, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingSE.png
+中继选择 = select, 香港,台湾,美国,日本,韩国, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/StreamingSE.png
 
 [Remote Filter]
 香港 = NameRegex, FilterKey = "^(?=.*((?i)🇭🇰|香港|(\b(HK|HKG|Hong)(\d+)?\b)))(?!.*((?i)回国|校园|游戏|🎮|(\b(GAME)\b))).*$"
