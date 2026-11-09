@@ -67,6 +67,7 @@ bypass-tun = 10.0.0.0/8,100.64.0.0/10,127.0.0.0/8,169.254.0.0/16,172.16.0.0/12,1
 [Proxy Group]
 FINAL = select, DIRECT, 节点选择, 香港节点, 狮城节点, 美国节点, 台湾节点, 韩国节点, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 节点选择 = select, 香港节点, 狮城节点, 美国节点, 台湾节点, 韩国节点, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png
+人工智能 = select, 香港节点, 狮城节点, 美国节点, 台湾节点, 韩国节点, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Round_Robin.png
 苹果服务 = select, DIRECT, 节点选择, 香港节点, 狮城节点, 美国节点, 台湾节点, 韩国节点, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
 奈飞视频 = select, 节点选择, 香港节点, 狮城节点, 美国节点, 台湾节点, 韩国节点, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 油管视频 = select, 节点选择, 香港节点, 狮城节点, 美国节点, 台湾节点, 韩国节点, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
@@ -93,9 +94,11 @@ FINAL,FINAL
 
 [Remote Rule]
 https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list, policy=DIRECT, tag=局域网, enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Rule/self-reject.lsr, policy=REJECT, tag=自用拦截,enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Rule/self-direct.lsr, policy=DIRECT, tag=自用直连,enabled=true
+https://raw.githubusercontent.com/uTiamoO/Loon-Script/refs/heads/master/Rule/self.lsr, policy=人工智能, tag=自用AI,enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Reject/Advertising.lsr, policy=REJECT, tag=去广告,enabled=false
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Apple/TestFlight.lsr, policy=节点选择, tag=TestFlight, enabled=true
-https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=节点选择, tag=AI, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Apple/Apple.lsr, policy=苹果服务, tag=苹果服务, enabled=true
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Other/Github.lsr, policy=节点选择, tag=Github, enabled=tru
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Rule/Media/YouTube.lsr, policy=油管视频, tag=油管视频, enabled=true
