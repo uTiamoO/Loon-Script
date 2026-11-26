@@ -2,7 +2,7 @@
 #!desc = 替换 Google One AI 页面中的套餐标识
 
 [Rewrite]
-^https://one\.google\.com/ai(?:[/?]|$) response-body-replace-regex 30tb\.ai\.pro\.m 30tb.m 20tb\.m\.v2 20tb.m g1\.ios\.20tb\.m\.v2 com.google.gemini.2tb.ai.m.3month_ip_99p
+^https://one\.google\.com/ai(?:[/?]|$) response-body-replace-regex g1\.ios\.20tb\.m\.v2 com.google.gemini.2tb.ai.m.3month_ip_99p g1\.ios\.30tb\.ai\.pro\.m g1.ai.ultra.3months_ip_90p.acq 30tb\.ai\.pro\.m 30tb.m 20tb\.m\.v2 20tb.m
 
 [Mitm]
 hostname = one.google.com
