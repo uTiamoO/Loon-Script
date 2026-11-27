@@ -6,7 +6,7 @@
 # 30tb\.ai\.pro\.m 30tb.m 20tb\.m\.v2 20tb.m 2949.99
 
 [Rewrite]
-^https://one\.google\.com/ai(?:[/?]|$) response-body-replace-regex g1\.ios\.20tb\.m\.v2 g1.ai.ultra.1month_eft.acq
+^https://one\.google\.com/ai(?:[/?]|$) response-body-replace-regex 30tb\.ai\.pro\.m 30tb.m 20tb\.m\.v2 20tb.m
 
 [Mitm]
 hostname = one.google.com
